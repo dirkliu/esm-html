@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>eccahrts demo</title>
+  <style>
+    #echartsBox {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="echartsBox">echart box</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.8.0/echarts.min.js"
+    integrity="sha512-OvWfXEXFlgwaMYESoKZRrPGq9Ndjcf7pMgp+NjbUNeqEA1OOOUbLgquJGOzvh7H78qinNObGwRiFIj22es61Eg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const chart = echarts.init(document.querySelector('#echartsBox'))
+    console.log('chart:', chart)
+    chart.setOption({
+      polar: {},
+      angleAxis: {
+        startAngle: 0
+      },
+      radiusAxis: {
+        min: 0,
+        max: 10,
+        interval: 2
+      },
+      series: []
+    })
+  </script>
+</body>
+
+</html>

@@ -7,11 +7,20 @@
   </head>
   <body>
     <div>es原生模块测试</div>
+    <button type="button" id="downloadBtn">下载</button>
     <script type="module" src="./src/c.js"></script>
     <script type="module">
       import a from './src/a.js'
-
-      console.log('a:', a)
+      document.querySelector('#downloadBtn').addEventListener('click', () => {
+        const blob = new Blob(['abcde你好'], {
+          type: 'text/csv;charset=gbk'
+        })
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href=url
+        a.click()
+        URL.revokeObjectURL(url)
+      })
     </script>
   </body>
 </html>
